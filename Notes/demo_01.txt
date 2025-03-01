@@ -1,0 +1,46 @@
+- Download and Install Python from https://www.python.org
+- Download and Install IDE:
+	a. PyCharm: https://www.jetbrains.com not from Softonic
+		- Install PyCharm Community Edition (not PyCharm Professional)
+		- Create Project
+		- Create Package
+		- Create Python files
+		- Start Coding
+	b. Anaconda -> jupyter notebook
+1. print() function: Writing first Python program using print() function.
+-------------------------------------------------------------------------
+print("Hello World") #Using double quotes to print string.
+print('Hello World') #Using single quotes to print string.
+print("""Hello World""") #Using 3 double quotes to print string.
+print('''Hello World''') #Using 3 single quotes to print string.
+print('my name is "Rahul"') #outer single quotes are used to print inner double quotes in a string.
+print("my name is 'Rahul'") #outer double quotes are used to print inner single quotes in a string.
+print('''my name is "Rahul"''') #outer 3 single quotes are used to print inner double quotes in a string.
+print("""my name is 'Rahul'""") #outer 3 double quotes are used to print inner single quotes in a string.
+print('my name is """Rahul"""') #outer single quotes are used to print 3 inner double quotes in a string.
+print("my name is '''Rahul'''") #outer double quotes are used to print 3 inner single quotes in a string.
+print(5, 10.25, True, [1,2,3], (1,2,3), {'a':1, 'b':2, 'c':3}, {1,2,3})
+'''Note: Not only string variable even int, float, bool, list, tuple, dictionary and set data types 
+can be printed using print() function.'''
+
+2. Defining variables and performing simple 'sum' operation using variables:
+----------------------------------------------------------------------------
+a = 5
+b = 15
+sum = a+b 
+print(a, b, sum) #sum will return sum of a and b
+
+3. input() function: Taking user input and printing that value as output.
+-------------------------------------------------------------------------
+print("Program to show how to take user input")
+name = input("Enter your Name: ")
+print("Hello", name) #prints name which is given by user as input.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+1. NameError: When trying to use some variable which is not defined or not initialized.
+print(z) #NameError: name 'z' is not defined
+
+
+2. ValueError: 
+name = "Python"
+print(int(name)) #output: ValueError: invalid literal for int() with base 10: 'Python'
+print(x.index(10)) #output: ValueError: 10 is not in list
+print(x.index('ON')) #output: ValueError: substring not found
+x.remove(20) #output: ValueError: list.remove(x): x not in list
+
+
+3. ZeroDivisionError: division by zero
+x=5/0
+print(x) #output: ZeroDivisionError: division by zero
+
+
+4. TypeError:
+print(x.count()) #TypeError: list.count() takes exactly one argument (0 given).
+y = list('abc', 'xyz') #TypeError: list expected at most 1 argument, got 2
+y = tuple('abc', 'xyz') #TypeError: tuple expected at most 1 argument, got 2
+y = (1, 2, 3, 'abc')
+y[1] = 50 #output: TypeError: 'tuple' object does not support item assignment
+
+
+5. AttributeError:
+print(x.find()) #output: AttributeError: 'list' object has no attribute 'find'.
+print(y.split(" ")) #AttributeError: 'list' object has no attribute 'split'
+y = (1, 2, 3, 'abc')
+print(y.append('xyz')) #output: AttributeError: 'tuple' object has no attribute 'append'
+print(y.insert(0, 10)) #output: AttributeError: 'tuple' object has no attribute 'insert'
+y.pop() #output: AttributeError: 'tuple' object has no attribute 'pop'
+y.remove(1) #output: AttributeError: 'tuple' object has no attribute 'remove'
+
+
+6. IndexError:
+x[5] = 65 #output: IndexError: list assignment index out of range
+x = [1, 2, 3, 4, 5]
+print(x[10]) #output: IndexError: list index out of range
+x = [10, 20, 30, 40, 50]
+#del x[10] #IndexError: list assignment index out of range
+x = [10, 20, 30, 40, 50]
+print(x.pop(20)) #output: IndexError: pop index out of range
+x = []
+x.pop() #output: IndexError: pop from empty list

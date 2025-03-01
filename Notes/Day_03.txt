@@ -1,0 +1,200 @@
+14. Slicing operations with String:
+-----------------------------------
+x="Python Programming"
+print(x[0]) #output: P
+print(len(x)) #output: 18
+print(x[len(x)-1]) #output: g
+print(x[-1]) #output: g
+print(x[-len(x)]) #output: P
+
+#'in' Operator: To check sub-string in main string.
+print("S" in x) #output: False
+print("g" in x) #output: True
+print("G" in x) #output: False
+
+#'not in' Operator: It is Reverse of 'in' operator ie; returns True if sub-string not present and returns False if sub-string present.
+print("S" not in x) #output: True
+print("g" not in x) #output: False
+print("G" not in x) #output: True
+
+#count() function:
+print(x.count("P")) #output: 2, Since 'P' is present twice count() is returning 2.
+print(x.count('P', 2, 17)) #output: 1
+print(x.count('on', 2, 17)) #output: 1
+
+#find() function:
+print(x.find("P")) #output: 0
+print(x.find("P", 2)) #output: 7
+print(x.find('on', 2, 17)) #output: 4
+print(x.find('ON')) #output: -1, It indicates the sub-string is not present in main string.
+
+#split() function:
+y=x.split(" ")
+print(y) #output: ['Python', 'Programming']
+y=x.split("o")
+print(y) #output: ['Pyth', 'n Pr', 'gramming']
+
+
+Writing python program to print the frequency of each character inside a string:
+--------------------------------------------------------------------------------
+x="Python Programming"
+for c in x:
+    print(c, x.count(c)) #This will print the frequency of the character.
+    
+output:
+P 2
+y 1
+t 1
+h 1
+o 2
+n 2
+  1
+P 2
+r 2
+o 2
+g 2
+r 2
+a 1
+m 2
+m 2
+i 1
+n 2
+g 2
+
+
+Slicing Operation:
+------------------
+x="Python Programming"
+
+#slicing syntax: [start:end:step] but end index is exclusive(will not be included).
+y = x[1:5:2]
+print(y) #output: yh
+
+y = x[7:18:1]
+print(y) #output: Programming
+
+y = x[7:18] #step is taking 1 by default.
+print(y) #output: Programming
+
+y = x[7:] #end takes end index by default.
+print(y) #output: Programming
+
+y = x[:6] #start takes first index by default. ie; '0' index
+print(y) #output: Python
+
+y = x[:] #end takes end index by default.
+print(y) #output: Python Programming
+
+#Slicing using negative step:
+y = x[5::-1] #end takes end index by default.
+print(y) #output: nohtyP
+
+y = x[5:-19:-1] #end takes end index by default.
+print(y) #output: nohtyP
+
+
+Interview question: Reversing the given string using while loop.
+-----------------------------------------------------------------
+#Using while loop:
+x = "Selenium"
+y = len(x)-1 #7
+output1 = ""
+
+while y>=0:
+    output1 = output1+x[y]
+    y=y-1
+
+print(output1) #output: muineleS
+
+#Using string slicing operator(Important)
+output2=x[::-1]
+print(output2) #output:  muineleS
+
+
+Writing python program to compare two input numbers(Using conditional statements).
+----------------------------------------------------------------------------------
+input1=int(input("Please enter first number: "))
+input2=int(input("Please enter second number: "))
+
+if input1>input2:
+    print(f"{input1} is greater than {input2}")
+elif input2>input1: #elif used to have an extra condition.
+    print(f"{input2} is greater than {input1}")
+else:
+    print(f"{input1} is equal to {input2}")
+output:
+input1 = 25, input2 = 75 then output = 75 is greater than 25
+input1 = 35, input2 = 15 then output = 35 is greater than 15
+input1 = 99, input2 = 99 then output =99 is equal to 99
+
+
+Writing python program to solve below use case:
+-----------------------------------------------
+'''
+If user enters 
+'0' then print 'Zero', 
+'1' then print 'one',
+'2' then print 'two', 
+'3' then print 'three', 
+'4' then print 'four', 
+'5' to print 'five'.
+Also, user enter any value lesser than 0 and greater than 5 should return out of range.
+'''
+Method 1:
+input1 = int(input("Enter your number between '0' to '5': "))
+
+if input1 == 0:
+    print("zero")
+
+elif input1 == 1:
+    print('one')
+
+elif input1 == 2:
+    print('two')
+
+elif input1 == 3:
+    print('three')
+
+elif input1 == 4:
+    print('four')
+
+elif input1 == 5:
+    print('five')
+
+else:
+    print("Out of Range")
+
+#output:
+'''    
+input: 0, output:  zero
+input: 1, output:  one
+input: 2, output:  two
+input: 3, output:  three
+input: 4, output:  four
+input: 0, output:  five
+input: -1, output:  Out of Range
+input: 6, output:  Out of Range
+'''
+
+Method 2:
+input1 = int(input("Enter your number between '0' to '5': "))
+x = ['zero', 'one', 'two', 'three', 'four', 'five']
+if input1 < len(x) and input1 >= 0:
+    print(x[input1])
+else:
+    print("Out of Range")
+
+#output:
+'''    
+input: 0, output:  zero
+input: 1, output:  one
+input: 2, output:  two
+input: 3, output:  three
+input: 4, output:  four
+input: 0, output:  five
+input: -1, output:  Out of Range
+input: 6, output:  Out of Range
+'''
+
+
+

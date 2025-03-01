@@ -1,0 +1,224 @@
+4. Understanding Type function:
+-------------------------------
+Note: When any value is assigned to any variable in python. Python decides the variable type automatically based on the assigned value.
+a = 10
+print(type(a)) #<class 'int'>
+print(a) #a value is 10
+Note: Since the value assigned to a is 10 which is integer. hence, Python automatically assigns a type as 'int'
+
+b = 15.6
+print(type(b)) #<class 'float'>
+print(b) #b value is 15.6
+Note: Since the value assigned to b is 15.6 which is floating, Fractional or Decimal value. hence, Python automatically assigns b type as 'float'
+
+
+c = True
+print(type(c)) #<class 'bool'>
+print(c) #c value is True
+Note: Since the value assigned to c is True which is Boolean value. hence, Python automatically assigns c type as 'bool'
+
+str1 = 'Python'
+print(type(str1)) #<class 'str'>
+print(str1) #str1 value is Python
+Note: Since the value assigned to str1 is 'Python' which is string value. hence, Python automatically assigns str1 type as 'str'(string).
+
+list1 = [1,2,3,4,5]
+print(type(list1)) #<class 'list'>
+print(list1) #list1 value is [1, 2, 3, 4, 5]
+Note: Since the value assigned to list1 is [1,2,3,4,5] which is list value. hence, Python automatically assigns list1 type as 'list'.
+
+
+tuple1 = (1,2,3,4,5)
+print(type(tuple1)) #<class 'tuple'>
+print(tuple1) #tuple1 value is (1, 2, 3, 4, 5)
+Note: Since the value assigned to tuple1 is (1,2,3,4,5) which is tuple value. hence, Python automatically assigns tuple1 type as 'tuple'.
+
+
+set1 = {1,2,3,4,5}
+print(type(set1)) #<class 'set'>
+print(set1) #set1 value is {1, 2, 3, 4, 5}
+Note: Since the value assigned to set1 is {1,2,3,4,5} which is set value. hence, Python automatically assigns set1 type as 'set'.
+
+
+dict1 = {'a':1,'b':2,'c':3,'d':4,'e':5} # Dictionary is key:value pair
+print(type(dict1)) #<class 'dict'>
+print(dict1) #dict1 value is {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+Note: Since the value assigned to dict1 is {'a':1,'b':2,'c':3,'d':4,'e':5} which is dict value. hence, Python automatically assigns dict1 type as 'dict'.
+
+name = input("Please enter your name: ")
+print(type(name)) #<class 'str'>
+print(name) #Rahul
+Note: input provided by using input function is always string. 
+
+
+Note: Input Function always accept string type input. Even though user give different type input python accepts that as string type input only.
+name = input("Please enter input: ")
+print(type(name)) #<class 'str'>
+print(name) #123
+
+name = input("Please enter your name: ")
+print(type(name)) #<class 'str'>
+print(name) #True
+
+
+5. Mathematical Operators in Python: [+, -, *, /, **, //, %]
+------------------------------------------------------------
+x = 5
+y = 17
+
+#Addition: +
+print(x+y) #output: 22
+
+#Substraction: -
+print(x-y) #output: -12
+print(y-x) #output: 12
+
+#Multiplication: *
+print(x*y) #output: 85
+
+#Division: /
+print(x/y) #output: 0.29411764705882354
+print(y/x) #output: 3.4
+
+#Power: **
+print(x**y) #output: 762939453125
+print(y**x) #output: 1419857
+
+#Floor division(returns Quotient): //
+print(x//y) #output: 0
+print(y//x) #output: 3
+
+
+#Modular(returns Remainder): %
+print(x%y) #output: 2
+print(y%x) #output: 2
+
+
+6. Understanding Concatenation:
+-------------------------------
+x = 'Python'
+y = 'Programming'
+
+#Addition operation with String is called "Concatenation"
+print(x+y) #output: PythonProgramming
+#Note: When the data types are string only Concatenation(addition operation) is supported and other mathematical operation are not supported.
+
+#Repeatation Operation: String Multiplication
+a = "Bangalore"
+b = 5
+print(a*b) #output: BangaloreBangaloreBangaloreBangaloreBangalore
+#Note: Multiplication(*) between string and a number is a repeatation operator.
+
+
+7.Logical Operators in Python: [<, >, <=, >=, == and !=]
+--------------------------------------------------------
+#Note: Output of Logical operators is always Boolean
+
+Example 1:
+x = 5
+y = 17
+
+print(x < y) #output: True, Because x is lesser than y.
+
+print(x > y) #output: False, Because x is not greater than y.
+
+#Similar to x < y or x == y; Either of the condition can match.
+print(x <= y) #output: True, Because x is lesser than y but not equal at least one condition is True.
+
+#Similar to x > y or x == y; Either of the condition can match.
+print(x >= y) #output: False, Because x is neither greater than nor equal to y none of the condition is True.
+
+print(x == y) #output: False, Because x is not equal to y.
+
+print(x != y) #output: True, Because x is not equal to y.
+
+
+Example 2:
+x = 5
+y = 17
+
+print(x < y) #output: True, Because x is lesser than y.
+
+print(x > y) #output: False, Because x is not greater than y.
+
+#Similar to x < y or x == y; Either of the condition can match.
+print(x <= y) #output: True, Because x is lesser than y but not equal at least one condition is True.
+
+#Similar to x > y or x == y; Either of the condition can match.
+print(x >= y) #output: False, Because x is neither greater than nor equal to y none of the condition is True.
+
+print(x == y) #output: False, Because x is not equal to y.
+
+print(x != y) #output: True, Because x is not equal to y.
+
+
+Example 3:
+#Logical Operation with String: 
+Note: Logical operation with string is rarely used but can be performed.
+'''
+- ASCII values are used to compare strings
+- It doesn't matter how many letters a string has but python always compares only the first letter.
+    If first letter is same then it will compare the second letter so on..
+- 'b' is always greater than 'a' and 'aaaaaa'
+'''
+
+x = 'Python'
+y = 'Selenium'
+
+print(x < y) #output: True, Because P ASCII value is lesser than S ASCII value.
+
+print(x > y) #output: False, Because P ASCII value is not greater than S ASCII value.
+
+print(x <= y) #output: True, Because P ASCII value is lesser than or equal to S ASCII value.
+
+print(x >= y) #output: False, Because P ASCII value is not greater than or equal to S ASCII value.
+
+print(x == y) #output: False, Because P ASCII value is not equal to S ASCII value.
+
+print(x != y) #output: True, Because P ASCII value is not equal to S ASCII value.
+
+
+Example 4:
+#Note: True = 1 and False is 0. Hence, True is always greater than False.
+x = True
+y = False
+
+print(x < y) #output: False, Because 1(True) is not lesser than 0(False).
+
+print(x > y) #output: True, Because 1(True) is greater than 0(False).
+
+print(x <= y) #output: False, Because 1(True) is not lesser than or equal to 0(False).
+
+print(x >= y) #output: True, Because 1(True) is greater than but not equal to 0(False). At least one condition is True.
+
+print(x == y) #output: False, Because 1(True) is not equal to 0(False).
+
+print(x != y) #output: True, Because 1(True) is not equal to 0(False).
+
+
+Example 5:
+#Note: True = 1 and False is 0. Hence True is always greater than False.
+'''
+For AND:
+--------
+False False -> False
+True False -> False
+False True -> False
+True True -> True
+
+For OR:
+-------
+False False -> False
+True False -> True
+False True -> True
+True True -> True
+'''
+x = True
+y = False
+
+print(x and y) #output: False
+print(x or y) #output: True
+
+#not gives opposite value.
+print(not x) #output: False
+print(not y) #output: True
