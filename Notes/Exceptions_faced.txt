@@ -10,6 +10,7 @@ print(x.index('ON')) #output: ValueError: substring not found
 x.remove(20) #output: ValueError: list.remove(x): x not in list
 
 
+
 3. ZeroDivisionError: division by zero
 x=5/0
 print(x) #output: ZeroDivisionError: division by zero
@@ -21,6 +22,10 @@ y = list('abc', 'xyz') #TypeError: list expected at most 1 argument, got 2
 y = tuple('abc', 'xyz') #TypeError: tuple expected at most 1 argument, got 2
 y = (1, 2, 3, 'abc')
 y[1] = 50 #output: TypeError: 'tuple' object does not support item assignment
+TypeError: sum() missing 2 required positional arguments: 'input1' and 'input2'
+#print(sum(20, input1=10)) #TypeError: sum() got multiple values for argument 'input1'
+#print(sum_diff_func(45, input1=90)) #TypeError: sum_diff_func() got multiple values for argument 'input1'
+#user_date_function(30) #TypeError: user_date_function() takes 0 positional arguments but 1 was given
 
 
 5. AttributeError:
@@ -43,3 +48,7 @@ x = [10, 20, 30, 40, 50]
 print(x.pop(20)) #output: IndexError: pop index out of range
 x = []
 x.pop() #output: IndexError: pop from empty list
+
+7. SyntaxError: 
+print(sum(input2=10, 20)) --> positional argument follows keyword argument. Here input2
+def sum_diff_func(input1=75, input2): #SyntaxError: non-default argument follows default argument.
