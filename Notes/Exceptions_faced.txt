@@ -1,5 +1,6 @@
 1. NameError: When trying to use some variable which is not defined or not initialized.
 print(z) #NameError: name 'z' is not defined
+obj1=Employee() #NameError: name 'Employee' is not defined -> if import is not done.
 
 
 2. ValueError: 
@@ -26,6 +27,7 @@ TypeError: sum() missing 2 required positional arguments: 'input1' and 'input2'
 #print(sum(20, input1=10)) #TypeError: sum() got multiple values for argument 'input1'
 #print(sum_diff_func(45, input1=90)) #TypeError: sum_diff_func() got multiple values for argument 'input1'
 #user_date_function(30) #TypeError: user_date_function() takes 0 positional arguments but 1 was given
+obj1 = Animal("White") #output: TypeError: Animal.__init__() missing 1 required positional argument: 'color'
 
 
 5. AttributeError:
