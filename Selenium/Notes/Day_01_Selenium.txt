@@ -1,0 +1,11 @@
+#Selenium
+
+There are 8 locators in selenium
+1. id
+2. name
+3. link-text
+4. partial-link-text
+5. css-selector
+6. x-path
+7. class-name
+8. tag-name

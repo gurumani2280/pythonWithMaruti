@@ -1,0 +1,5 @@
+1. driver.get("www.saucedemo.com/v1/") #Exception received because of 'https'/protocol has not specified.
+	selenium.common.exceptions.InvalidArgumentException: Message: invalid argument
+2. search_button = driver.find_element(By.NAME, "btnK")
+search_button.click()
+#selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
