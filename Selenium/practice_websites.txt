@@ -1,0 +1,3 @@
+file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html
+https://www.saucedemo.com/v1/
+https://opensource-demo.orangehrmlive.com
