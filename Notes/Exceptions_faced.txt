@@ -32,6 +32,7 @@ x = {1, 2, 3}
 print(x[0]) #output: TypeError: 'set' object is not subscriptable
 set1.update(17) #output: TypeError: 'int' object is not iterable -> update() expect iterable object only single item/element can't update single element.
 print(set1.pop(30)) #output: TypeError: set.pop() takes no arguments (1 given) -> since pop() take index argument and set doesn't support indexing hence pop(index) doesn't support in set.
+dict2.pop() #output: TypeError: pop expected at least 1 argument, got 0
 
 
 5. AttributeError:
@@ -66,3 +67,10 @@ print(set1.discard(50) #SyntaxError: '(' was never closed
 8. KeyError:
 set1={20, 15}
 print(set1.remove(50)) #output: KeyError: 50 -> since 50 is not in set throwing KeyError
+dict2={1: 'eleven', 25: "2.0", 10: 'xyz'}
+print(dict2[2]) #output: KeyError: 2 -> Since the key 2 is not present it throws KeyError
+dict2={25: "2.0", 10: 'xyz'}
+del dict2[1] #output: KeyError: 1 -> Key 1 is not present so throwing KeyError
+dict2={25: "2.0", 10: 'xyz'}
+dict2.pop(1) #output: KeyError: 1, Key 1 is not present
+
