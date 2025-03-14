@@ -7,4 +7,10 @@ search_button.click()
 3. driver.find_element(By.XPATH, 'input[name="username"]').send_keys("test user") #user name = test user #XPATH is used for CSS selector
 selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"input[name="username"]"}
 selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"input[value="1"]"}
-
+4. wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, 'input[value="Lgin"]'))) -> 'Lgin' button is not available hence throwing exception
+	raise TimeoutException(message, screen, stacktrace)
+alert = wait.until(expected_conditions.alert_is_present())
+	raise TimeoutException(message, screen, stacktrace) 
+5. alert = driver.switch_to.alert #output: selenium.common.exceptions.NoAlertPresentException: Message: no such alert
+6. assert result_text == expected_text, failure_message
+	AssertionError: result text You successfully clicked an alert not matching You successfully clicked an alert modified

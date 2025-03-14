@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+#Filling all the details in html using CSS_SELECTOR
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get(url = "file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html")
@@ -49,4 +50,14 @@ driver.find_element(By.CSS_SELECTOR, 'input[value="Login"]').click()
 time.sleep(1)
 print("Details entered")
 driver.quit()
+
+'''
+output"
+True
+True
+False
+https://www.w3schools.com/images/w3schools_green.jpg
+W3Schools.com
+Details entered
+'''
 

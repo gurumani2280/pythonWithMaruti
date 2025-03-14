@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+#login to website: www.saucedemo.com then logout.
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get(url = "https://www.saucedemo.com/v1/")

@@ -33,6 +33,7 @@ print(x[0]) #output: TypeError: 'set' object is not subscriptable
 set1.update(17) #output: TypeError: 'int' object is not iterable -> update() expect iterable object only single item/element can't update single element.
 print(set1.pop(30)) #output: TypeError: set.pop() takes no arguments (1 given) -> since pop() take index argument and set doesn't support indexing hence pop(index) doesn't support in set.
 dict2.pop() #output: TypeError: pop expected at least 1 argument, got 0
+dict1.update(11, 50) #output: TypeError: update expected at most 1 argument, got 2
 
 
 5. AttributeError:

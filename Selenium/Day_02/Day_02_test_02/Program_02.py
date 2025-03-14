@@ -2,10 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+#login to website: www.saucedemo.com then logout.
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get(url = "https://www.saucedemo.com/v1/")
-print(driver.current_url, driver.title)
+print(driver.current_url, driver.title) #Prints url and title
 print(driver.page_source) #output: Entire page source(htmp output)
 driver.find_element(By.ID, "user-name").send_keys("standard_user")
 time.sleep(2)

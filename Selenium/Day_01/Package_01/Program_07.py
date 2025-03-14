@@ -2,6 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+#Program to search youtube using browser
 driver=webdriver.Chrome() #opened a chrome browser
 time.sleep(2) #It pauses the execution for 5 seconds
 driver.maximize_window() #This will maximize the window.
