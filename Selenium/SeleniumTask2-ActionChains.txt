@@ -1,0 +1,147 @@
+https://www.selenium.dev/selenium/docs/api/py/webdriver/selenium.webdriver.common.action_chains.html
+https://www.geeksforgeeks.org/action-chains-in-selenium-python/
+
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+
+# create webdriver object
+driver = webdriver.Chrome()
+driver.implicitly_wait(20)
+driver.maximize_window()
+# get geeksforgeeks.org
+driver.get("https://www.geeksforgeeks.org/")
+time.sleep(3)
+# get element
+element = driver.find_element(By.XPATH,"//span[text()='Courses']")
+
+# create action chain object
+action = ActionChains(driver)
+
+# click the item
+#action.click(on_element = element)
+action.move_to_element(element)
+
+# perform the operation
+action.perform()
+time.sleep(3)
+driver.quit()
+
+
+https://www.tutorialspoint.com/action-chains-in-selenium-python
+this has good example link for lot of methods
+
+https://www.tutorialspoint.com/how-can-i-perform-mouse-hover-action-in-selenium-python
+website to to mouse hover operation - https://the-internet.herokuapp.com/jqueryui/menu#
+
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+#launch URL
+driver.get("https://the-internet.herokuapp.com/jqueryui/menu#")
+#object of ActionChains
+a = ActionChains(driver)
+#identify element
+m = driver.find_element(By.LINK_TEXT,"Enabled")
+#hover over element
+a.move_to_element(m).perform()
+#identify sub menu element
+n = driver.find_element(By.LINK_TEXT,"Back to JQuery UI")
+# hover over element and click
+# a.move_to_element(n).click().perform()
+# print("Page title: " + driver.title)
+
+
+n1 = driver.find_element(By.LINK_TEXT,"Downloads")
+# hover over element and click
+a.move_to_element(n1).perform()
+
+
+n2 = driver.find_element(By.LINK_TEXT,"PDF")
+# hover over element and click
+a.move_to_element(n2).click().perform()
+
+
+print("Page title: " + driver.title)
+#close browser
+driver.quit()
+
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("https://www.tutorialspoint.com/index.htm")
+time.sleep(4)
+about_us_text = driver.find_element(By.XPATH, "//h5[text()='About us']")
+action = ActionChains(driver)
+action.move_to_element(about_us_text).perform()
+#action.scroll_to_element(about_us_text).perform()
+time.sleep(3)
+driver.quit()
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("https://demo.guru99.com/test/simple_context_menu.html")
+time.sleep(4)
+double_click_button = driver.find_element(By.XPATH, "//button[text() = 'Double-Click Me To See Alert']")
+action = ActionChains(driver)
+action.double_click(double_click_button).perform()
+time.sleep(3)
+driver.switch_to.alert.accept()
+time.sleep(3)
+driver.quit()
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("https://demo.guru99.com/test/simple_context_menu.html")
+time.sleep(4)
+right_click_button = driver.find_element(By.XPATH, "//span[text() = 'right click me']")
+action = ActionChains(driver)
+action.context_click(right_click_button).perform()
+time.sleep(3)
+driver.find_element(By.XPATH,"//span[text() = 'Quit']").click()
+time.sleep(3)
+print(driver.switch_to.alert.text)
+driver.switch_to.alert.accept()
+time.sleep(3)
+driver.quit()
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("http://www.dhtmlgoodies.com/submitted-scripts/i-google-like-drag-drop/index.html")
+time.sleep(4)
+block_1 = driver.find_element(By.XPATH, "//h1[text() = 'Block 1']")
+block_3 = driver.find_element(By.XPATH, "//h1[text() = 'Block 3']")
+action = ActionChains(driver)
+action.drag_and_drop(block_1,block_3).perform()
+time.sleep(3)
+driver.quit()
