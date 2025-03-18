@@ -1,0 +1,228 @@
+1. Opening Chrome browser:
+---------------------------
+from selenium import webdriver
+import time
+
+#Opening Chrome browser
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(5) #It pauses the execution for 5 seconds
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+'''
+output:
+Sleep completed and program execution completed
+'''
+
+2. Opening Firefox browser:
+---------------------------
+import time
+from selenium import webdriver
+
+driver=webdriver.Firefox() #opened a firefox browser
+time.sleep(5) #It pauses the execution for 5 seconds
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+'''
+output:
+Sleep completed and program execution completed
+'''
+
+
+3. Opening Edge browser:
+------------------------
+import time
+from selenium import webdriver
+
+
+driver=webdriver.Edge() #opened a firefox browser
+time.sleep(5) #It pauses the execution for 5 seconds
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+'''
+output:
+Sleep completed and program execution completed
+'''
+
+Program_01:
+-----------
+import time
+from selenium import webdriver
+
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(5)
+# driver.maximize_window() #second time maximize will not work in Selenium/Automation
+# time.sleep(5)
+driver.minimize_window() #This will minimize the window.
+time.sleep(5)
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_02:
+-----------
+import time
+from selenium import webdriver
+
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL, always use https or http
+time.sleep(2)
+driver.get("https://www.saucedemo.com/v1/") #Opening a new URL
+time.sleep(2)
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_03:
+-----------
+import time
+from selenium import webdriver
+
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+driver.get("https://www.saucedemo.com/v1/") #Opening a new URL
+time.sleep(2)
+driver.back()
+time.sleep(2)
+driver.forward()
+time.sleep(2)
+driver.refresh()
+time.sleep(2)
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_04:
+-----------
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+#Program to search youtube using browser
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("youtube")
+time.sleep(2)
+search_button = driver.find_element(By.NAME, "btnK")
+search_button.click()
+time.sleep(2)
+
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_05:
+-----------
+import time
+from selenium import webdriver
+from selenium.webdriver import Keys
+from selenium.webdriver.common.by import By
+
+#Program to search facebook using browser
+driver=webdriver.Chrome() #opened a chrome browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("facebook", Keys.ENTER)
+time.sleep(2)
+
+
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_06:
+-----------
+#Opening Firefox browser
+
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+#Program to search youtube using Firebox browser
+driver=webdriver.Firefox() #opened a firefox browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("youtube")
+time.sleep(2)
+search_button = driver.find_element(By.NAME, "btnK")
+search_button.click()
+time.sleep(2)
+
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_07:
+-----------
+#Opening Edge browser
+
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+#Program to search facebook using Edge browser
+driver=webdriver.Edge() #opened a Edge browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("facebook")
+time.sleep(2)
+search_button = driver.find_element(By.NAME, "btnK")
+search_button.click()
+time.sleep(2)
+
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser
+
+
+Program_08:
+-----------
+#Opening Edge browser
+
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+#Program to search facebook using Chrome browser
+driver=webdriver.Edge() #opened a Edge browser
+time.sleep(2) #It pauses the execution for 5 seconds
+driver.maximize_window() #This will maximize the window.
+time.sleep(2)
+driver.get("https://www.google.com/") #Opening a URL
+time.sleep(2)
+search_box = driver.find_element(By.ID, "APjFqb") #By.ID is used to find search button
+search_box.send_keys("youtube")
+time.sleep(2)
+search_button = driver.find_element(By.CLASS_NAME, "gNO89b") #By.CLASS_NAME is used to find search button
+search_button.click()
+time.sleep(2)
+
+print("Sleep completed and program execution completed")
+driver.quit() #Quit will close the browser

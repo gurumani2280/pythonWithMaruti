@@ -1,0 +1,1 @@
+1. End to end scenario for Swag labs: https://www.saucedemo.com/v1/ (Login, Add to cart, checkout, order....logout) Try with ID, NAME, CSS_SELECTOR and XPATH

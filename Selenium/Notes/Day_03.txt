@@ -1,0 +1,243 @@
+Program_14:
+-----------
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(url="file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html")
+time.sleep(1)
+
+all_inputs = driver.find_elements(By.CSS_SELECTOR,'input')
+print(len(all_inputs), type(all_inputs))  # output: 3 <class 'list'>
+for input in all_inputs:
+    print(input.get_attribute("type"))
+    time.sleep(1)
+driver.quit()
+
+
+'''
+output:
+13 <class 'list'>
+text
+password
+text
+text
+radio
+radio
+text
+checkbox
+checkbox
+checkbox
+file
+submit
+reset
+
+'''
+
+
+Program_15:
+-----------
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(url = "file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html")
+time.sleep(1)
+
+#driver.find_element(By.CSS_SELECTOR, 'input[type="checkbox"]').click()
+#Note: find_element() will always give the first matching element when multiple options are available
+all_check_boxes = driver.find_elements(By.CSS_SELECTOR, 'input[type="checkbox"]') #find_elements -> returns multiple elements+
+print(len(all_check_boxes), type(all_check_boxes)) #output: 3 <class 'list'>
+for check_box in all_check_boxes:
+    check_box.click()
+    time.sleep(1)
+
+#To handle exception: Where element is not find
+all_check_boxes = driver.find_elements(By.CSS_SELECTOR, 'input[type="checkbox123"]') #find_elements -> returns list with length(0)
+print(len(all_check_boxes), type(all_check_boxes)) #output: 0 <class 'list'>
+
+driver.quit()
+
+
+Program_16:
+-----------
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(url = "file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html")
+time.sleep(1)
+
+state_element = driver.find_element(By.CSS_SELECTOR, 'select[name="state"]')
+dropdown = Select(state_element)
+dropdown.select_by_index(1)
+time.sleep(1)
+dropdown.select_by_value('2')
+time.sleep(1)
+dropdown.select_by_visible_text("KARNATAKA")
+time.sleep(1)
+dropdown.select_by_index(4)
+time.sleep(1)
+print(dropdown.is_multiple) #output: None
+all_options = dropdown.options
+print(len(all_options)) #output: 5
+
+for option in all_options:
+    print(option.text)
+    print(option.get_attribute("value"))
+driver.quit()
+
+'''
+output:
+5
+SELECT
+0
+KARNATAKA
+1
+ANDHRA
+2
+TELENGANA
+3
+TAMILNADU
+4
+'''
+
+
+Program_17:
+-----------
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(url = "file:///C:/Users/USER/Desktop/python_repository/pythonWithMaruti/Selenium/BasicHtmlElement.html")
+time.sleep(1)
+
+state_element = driver.find_element(By.CSS_SELECTOR, 'select[name="alloptions"]')
+dropdown = Select(state_element)
+dropdown.select_by_index(1)
+time.sleep(1)
+dropdown.select_by_value('3')
+time.sleep(1)
+dropdown.select_by_visible_text("FOUR")
+time.sleep(1)
+dropdown.deselect_by_index(1)
+time.sleep(3)
+
+print(dropdown.is_multiple) #output: True
+all_options = dropdown.options
+print(len(all_options)) #output: 5
+
+for option in all_options:
+    print(option.text)
+    print(option.get_attribute("value"))
+driver.quit()
+
+'''
+output:
+ONE
+1
+TWO
+2
+THREE
+3
+FOUR
+4
+FIVE
+5
+'''
+
+
+Program_18:
+-----------
+from selenium import webdriver
+import time
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+time.sleep(2)
+driver.get(url="https://www.saucedemo.com/v1/")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[data-test="username"]').send_keys("standard_user")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[data-test="password"]').send_keys("secret_sauce")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[id="login-button"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'div[class="bm-burger-button"]>button').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'a[id="inventory_sidebar_link"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'button[class="btn_primary btn_inventory"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'path[fill="currentColor"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'a[class="btn_action checkout_button"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[id="first-name"]').send_keys("Maruti")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[id="last-name"]').send_keys("AS")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[id="postal-code"]').send_keys("560000")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'input[class="btn_primary cart_button"]').click()
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, 'a[class="btn_action cart_button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, 'div[class="bm-burger-button"]>button').click()
+time.sleep(2)
+driver.find_element(By.ID, "logout_sidebar_link").click()
+time.sleep(2)
+driver.quit()
+
+
+
+Program_19:
+-----------
+from selenium import webdriver
+import time
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+time.sleep(2)
+driver.get(url="https://www.saucedemo.com/v1/")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="user-name"]').send_keys("standard_user")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="password"]').send_keys("secret_sauce")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="login-button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//button[@class="btn_primary btn_inventory"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//div[@id="shopping_cart_container"]').click() #//*[name()='svg']
+time.sleep(2)
+driver.find_element(By.XPATH, '//div[@class="cart_footer"]//a[@class="btn_action checkout_button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="first-name"]').send_keys("Maruthi")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="last-name"]').send_keys("AS")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@id="postal-code"]').send_keys("560000")
+time.sleep(2)
+driver.find_element(By.XPATH, '//input[@class="btn_primary cart_button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//a[@class="btn_action cart_button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//div[@class="bm-burger-button"]').click()
+time.sleep(2)
+driver.find_element(By.XPATH, '//a[@id="logout_sidebar_link"]').click()
+time.sleep(2)
+print("Execution completed successfully")
+driver.quit()

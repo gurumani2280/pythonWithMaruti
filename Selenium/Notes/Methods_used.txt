@@ -1,0 +1,68 @@
+How selenium communicate with browser?
+--------------------------------------
+Selenium WebDriver communicates with browsers using the JSON Wire Protocol over HTTP, where Selenium client libraries send commands as HTTP requests to the browser driver, which in turn executes them on the browser and sends back the results. 
+
+Here's a more detailed breakdown:
+Client-Server Model:
+Selenium WebDriver operates on a client-server architecture. 
+Client Libraries:
+Your Selenium code (written in languages like Java, Python, etc.) acts as the client. 
+Browser Drivers:
+Each browser (Chrome, Firefox, etc.) has its own specific driver (e.g., ChromeDriver, GeckoDriver) that acts as the server. 
+JSON Wire Protocol:
+Selenium uses the JSON Wire Protocol to encode and decode the requests and responses between the client libraries and browser drivers. 
+HTTP Requests:
+The Selenium client libraries send commands, which are then converted into HTTP requests using the JSON Wire Protocol. 
+Browser Interaction:
+The browser driver receives these HTTP requests, interprets them, and interacts with the browser to perform actions like navigating to a page, clicking elements, or entering text. 
+Results:
+The browser driver sends the results of these actions back to the client library, again using HTTP requests encoded with the JSON Wire Protocol. 
+Selenium 4 and W3C Protocol:
+In Selenium 4, the communication between the client libraries and browser drivers uses the W3C WebDriver protocol instead of the JSON Wire Protocol. 
+
+
+
+WEBDRIVER: 
+----------
+from selenium import webdriver
+
+drive = webdriver.Chrome()
+drve = webdriver.Firefox()
+driver = webdriver.Edge()
+driver.maximize_window()
+driver.minimize_window()
+driver.get()
+driver.get("URL")
+driver.get(url = "URL")
+driver.back()
+driver.forward()
+driver.refresh()
+driver.quit()
+driver.find_element()
+driver.find_elements()
+driver.current_url -> Returns URL
+driver.title -> Returns URL title
+driver.page_source-> Returns Source code in html format.
+
+
+
+TIME:
+-----
+import time
+
+time.sleep(time in seconds)
+
+
+
+By Class:
+---------
+from selenium.webdriver.common.by import By
+
+By.ID, By.NAME, By.CLASS_NAME, By.TAG_NAME, By.LINK_TEXT, By.PARTIAL_LINK_TEXT, By.XPATH, By.CSS_SELECTOR
+
+
+
+click()
+send_keys("Input")
+submit()
+perform()
