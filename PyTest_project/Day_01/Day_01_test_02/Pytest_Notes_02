@@ -1,0 +1,18 @@
+#Fixtures:
+To run anything before and after test methods we can use fixtures.
+How to use:
+Create fixture method and top of fixture method provide @pytest.fixture()
+Then in test method name pass this fixture method name as argument.
+
+output:
+platform win32 -- Python 3.10.11, pytest-8.3.5, pluggy-1.5.0 -- C:\Users\USER\Desktop\python_selenium_automation\PyTest_project\Day_01\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\USER\Desktop\python_selenium_automation\PyTest_project\Day_01
+configfile: pytest.ini
+collected 1 item
+
+Day_01_test_01/test_01.py::test_method1 This will run before the test method
+This is my first test method in pytest
+PASSEDThis will run after the test method
+
+
