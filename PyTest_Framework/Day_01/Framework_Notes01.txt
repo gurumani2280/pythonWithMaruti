@@ -1,0 +1,13 @@
+pip install pytest-xdist #To run test cases parallel we ca use pytest-xdist to launch multiple tests
+
+pytest -v -s -n=2 #n=2 will launch two workers at a time.
+
+#Assignment:
+How to create Page classes? LoginPage and ProductsPage
+How to use Page classes in test classes.
+End to end test file for saucedemo put it in test folder and convert that to page classes similar to today.
+
+
+
+
+
