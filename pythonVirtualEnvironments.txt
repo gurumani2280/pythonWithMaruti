@@ -1,0 +1,14 @@
+https://docs.python.org/3/library/venv.html
+Creating virtual environments - python -m venv /path/to/new/virtual/environment
+
+https://python.land/virtual-environments/virtualenv
+
+Python venv activation - venv\Scripts\activate.bat
+
+Deactivate the Python venv - deactivate
+
+Delete a venv created with Virtualenv or python -m venv
+If you want to delete this virtualenv, deactivate it first and then remove the directory with all its content
+deactivate
+# If your virtual environment is in a directory called 'venv':
+rm -r venv

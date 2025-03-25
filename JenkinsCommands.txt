@@ -1,0 +1,90 @@
+ https://updates.jenkins-ci.org/download/war/
+
+ https://jenkins.io/download/
+
+ https://stackoverflow.com/questions/46404855/setting-up-jenkins-with-jenkins-war
+ https://stackoverflow.com/questions/15265277/how-to-start-jenkins-on-different-port-rather-than-8080-using-command-prompt-in
+	
+ https://stackoverflow.com/questions/34342207/jenkins-update-error-java-net-bindexception-address-already-in-use
+
+
+0. java 
+Starting with Jenkins releases 2.357 and LTS 2.361.1, Java 11 or Java 17 is required.
+https://www.jenkins.io/doc/book/platform-information/upgrade-java-to-11/#:~:text=Starting%20with%20Jenkins%20releases%202.357,or%20Java%2017%20is%20required.
+
+1. Jenkins Installation
+C:\Users\tester_android\Desktop\Jenkins>java -jar jenkins.war
+
+Caused by: java.net.BindException: Address already in use: bind
+
+C:\Users\tester_android\Desktop\Jenkins>java -jar jenkins.war --httpPort=6060
+
+ Jenkins is fully up and running
+
+2. launch jenkins url
+ http://localhost:6060/
+
+ C:\Users\tester_android\.jenkins\secrets
+
+For adding user or 
+Jenkin -- Manage Jenkins --> Manage Users --> 
+
+Enter credentials--
+ admin admin
+
+ https://stackoverflow.com/questions/46840692/default-credentials-for-jenkins-after-installation
+
+ https://testingbar.blogspot.com/p/jenkins-contents.html
+
+ add plugins
+
+
+
+3. create free style project
+Configuration -> Advanced -> Use custom workspace - > Directory -- > provide location of framework
+Build Steps -> Execute Windows batch command - > Command --> enter all the batch commands to be executed 
+
+
+4. adding parameter
+
+General -> This project is parameterised
+add parameter  - > Choice Parameter  -> Name -> Choices -- provide here all the options
+
+The name of the parameters should be a plain name, preferably without spaces, like Branch. Do not add any ${} or %% to definition of the parameter name.
+In the build steps, like Execute Windows Batch Command, you can reference the parameter with regular batch syntax, like %Branch%.
+
+https://stackoverflow.com/questions/24429976/pass-parameter-from-jenkins-parameterized-build-to-windows-batch-command
+
+If you would be on a *nix machine, you would use Execute shell build step and reference the parameter with regular bash syntax, like ${Branch}
+${suiteXmlFile}
+
+clean test -DsuiteXmlFile
+
+clean test -DsuiteXmlFile=$testngxml
+
+
+
+5. Add plugins
+
+ Jenkin -- Manage Jenkins --> Manage Plugins-- Available plugin -- 
+
+ TestNG Result Plugin
+ HTML Publisher plugin
+
+Publish TestNg Result --- in Post -BUild Actions of the COnfigure
+
+And also Publish HTML report
+
+search - junit   -- 'Allows JUnit-format test results to be published.'
+install without restart
+--junitxml=result.xml
+
+in configure -> BUild Actions -> JUnit-format test results
+
+6. configure project to run periodically 
+BuildTriggers->Build Periodically
+
+*/2 * * * *
+
+https://stackoverflow.com/questions/12472645/how-do-i-schedule-jobs-in-jenkins
+
